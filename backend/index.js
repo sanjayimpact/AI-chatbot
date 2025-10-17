@@ -12,7 +12,9 @@ const MODEL_NAME = "models/gemini-2.5-flash-lite"; // instead of pro
 
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/${MODEL_NAME}:generateContent`;
 const API_KEY = process.env.GOOGLE_API_KEY;
-
+app.get('/',(req,res)=>{
+  res.send('welcome to the server');
+})
 app.post("/api/chat", async (req, res) => {
   const { messages } = req.body;
 
