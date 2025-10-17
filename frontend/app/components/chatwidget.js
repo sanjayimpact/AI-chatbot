@@ -62,7 +62,7 @@ export default function ChatWidget() {
   const sendMessage = async () => {
     if (!input.trim()) return;
     const domain = window.location.hostname;
-    const userMessage = { role: "user", content: `${input} (from ${domain})` };
+    const userMessage = { role: "user", content: `${input}` };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
