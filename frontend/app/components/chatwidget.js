@@ -68,14 +68,14 @@ export default function ChatWidget() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/chat", {
+      const res = await fetch("https://ai-chatbot-olcw.vercel.app/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [...messages, userMessage] }),
       });
 
       const data = await res.json();
-      console.log(data);
+
       const reply = data.reply || "No response.";
       typeEffect(reply);
     } catch (err) {
